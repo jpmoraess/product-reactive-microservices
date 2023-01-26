@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: product-info-service
+  profiles:
+    active: dev
+  mongodb:
+    embedded:
+      version: 4.0.21
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: local
+      password: admin
+
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: local
+      password: admin
